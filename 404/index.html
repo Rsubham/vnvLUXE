@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>VnV Luxe | Coming Soon</title>
+    <link rel="icon" href="https://vnvluxe.in/favicon.ico" />
+    <style>
+        @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap");
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            height: 100vh;
+            width: 100%;
+            font-family: "Poppins", sans-serif;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #000000, #000d1f, #0d0874);
+            background-size: 400% 400%;
+            animation: gradientShift 10s ease infinite;
+            position: relative;
+            color: #fff;
+        }
+
+        @keyframes gradientShift {
+            0% {
+                background-position: 0% 50%;
+            }
+
+            50% {
+                background-position: 100% 50%;
+            }
+
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        .particle {
+            position: absolute;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            animation: float 10s linear infinite;
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(0) scale(1);
+                opacity: 1;
+            }
+
+            100% {
+                transform: translateY(-100vh) scale(0.5);
+                opacity: 0;
+            }
+        }
+
+        .content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+            z-index: 5;
+            animation: fadeIn 1.5s ease forwards;
+            width: 90vw;
+            text-align: center;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .error_anim {
+            position: relative;
+            max-height: 300px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 2rem;
+        }
+
+        .anim {
+            max-width: 100%;
+            width: 500px;
+            height: auto;
+            background-color: transparent;
+        }
+
+        .error_text h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+            color: #fff;
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+            margin-bottom: 1rem;
+        }
+
+        .error_text p {
+            font-size: 1.2rem;
+            font-weight: 300;
+            color: #d1d1d1;
+            line-height: 1.5;
+        }
+
+        footer {
+            position: absolute;
+            bottom: 10px;
+            text-align: center;
+            width: 100%;
+            font-size: 0.8rem;
+            opacity: 0.3;
+        }
+
+        @media (max-width: 768px) {
+            .error_text{
+                margin-top: -3rem;
+            }
+            .error_text h1 {
+                font-size: 2rem;
+            }
+
+            .anim {
+                margin-top: -8rem;
+                width: 105vw;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Floating particles -->
+    <script>
+        for (let i = 0; i < 25; i++) {
+            const p = document.createElement("div");
+            p.classList.add("particle");
+            const size = Math.random() * 6 + 2;
+            p.style.width = `${size}px`;
+            p.style.height = `${size}px`;
+            p.style.left = `${Math.random() * 100}%`;
+            p.style.animationDuration = `${5 + Math.random() * 10}s`;
+            p.style.animationDelay = `${Math.random() * 5}s`;
+            document.body.appendChild(p);
+        }
+    </script>
+
+    <div class="content">
+        <div class="error_anim">
+            <creattie-embed src="https://d1jj76g3lut4fe.cloudfront.net/saved_colors/131812/RgQn94o7H590cCe2.json"
+                delay="1" speed="20" frame_rate="60" trigger="loop" class="anim">
+            </creattie-embed>
+        </div>
+
+        <div class="error_text">
+            <h1>Our website is under development</h1>
+            <p> We’re working hard to create an amazing experience for you, stay tuned.</p>
+        </div>
+    </div>
+
+    <footer>© 2025 VnV Luxe. All rights reserved.</footer>
+
+    <script src="https://creattie.com/js/embed.js?id=3f6954fde297cd31b441" defer></script>
+</body>
+
+</html>
